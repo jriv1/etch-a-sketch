@@ -1,7 +1,10 @@
 
-
 const container = document.querySelector(".container");
-//container for all grids
+const currentColor = document.querySelector(".currentColor");
+const randomColor = document.querySelector(".randomColor");
+const slider = document.querySelector(".sizeSlider");
+const clear = document.querySelector(".clear");
+
 let randomR = Math.trunc(Math.random() * 256);
 let randomG = Math.trunc(Math.random() * 256);
 let randomB = Math.trunc(Math.random() * 256);
@@ -18,7 +21,7 @@ else{
     } while (gridSize > 100);
     setUpGrid();
 }
-
+currentColor.style.color = "red"; // make a circle that shows current color 
 
 
 function setUpGrid() {
@@ -36,17 +39,15 @@ function setUpGrid() {
 
 
 
-        const changeColor = function(){
-
-            
-            
+        const changeColor = function(){     
                 grid.style.background = `rgb(${randomR},${randomG},${randomB})`;       
-           
-
         }
 
-
         grid.addEventListener("mouseover",changeColor);
+        
+        clear.addEventListener("click",function(){
+            grid.style.background = "white";
+        })
     }
 
 
