@@ -22,6 +22,9 @@ body{
     justify-content: space-evenly;
 
 }
+.color{
+    margin-bottom: 40px;
+}
 
 .container{
     height: 400px;
